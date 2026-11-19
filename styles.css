@@ -1,0 +1,239 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import "@fontsource-variable/source-serif-4";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — « Cahier de notes » : papier chaud, vert tableau noir, ocre.
+ * All colors MUST use oklch format.
+ */
+
+@theme inline {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4 Variable", Georgia, serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-install: var(--install);
+  --color-install-foreground: var(--install-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-ochre: var(--ochre);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-rule: var(--rule);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-sheet: var(--shadow-paper);
+}
+
+:root {
+  --install: oklch(0.45 0.17 258);
+  --install-foreground: oklch(0.99 0 0);
+  --radius: 0.5rem;
+  --background: oklch(0.968 0.012 85);
+  --foreground: oklch(0.24 0.035 160);
+  --card: oklch(0.992 0.006 85);
+  --card-foreground: oklch(0.24 0.035 160);
+  --popover: oklch(0.992 0.006 85);
+  --popover-foreground: oklch(0.24 0.035 160);
+  --primary: oklch(0.4 0.075 160);
+  --primary-foreground: oklch(0.975 0.012 85);
+  --secondary: oklch(0.925 0.022 88);
+  --secondary-foreground: oklch(0.28 0.04 160);
+  --muted: oklch(0.94 0.015 85);
+  --muted-foreground: oklch(0.5 0.03 150);
+  --accent: oklch(0.9 0.06 85);
+  --accent-foreground: oklch(0.28 0.04 160);
+  --destructive: oklch(0.55 0.19 28);
+  --destructive-foreground: oklch(0.98 0.01 85);
+  --success: oklch(0.52 0.12 150);
+  --success-foreground: oklch(0.98 0.01 85);
+  --warning: oklch(0.76 0.14 75);
+  --warning-foreground: oklch(0.25 0.04 70);
+  --ochre: oklch(0.78 0.14 78);
+  --paper: oklch(1 0 0);
+  --ink: oklch(0.18 0.01 160);
+  --rule: oklch(0.45 0.01 160);
+  --bulletin-head: oklch(0.94 0.01 160);
+  --border: oklch(0.87 0.02 85);
+  --input: oklch(0.85 0.022 85);
+  --ring: oklch(0.55 0.08 160);
+  --chart-1: oklch(0.4 0.075 160);
+  --chart-2: oklch(0.78 0.14 78);
+  --chart-3: oklch(0.55 0.19 28);
+  --chart-4: oklch(0.6 0.08 200);
+  --chart-5: oklch(0.65 0.1 130);
+  --sidebar: oklch(0.27 0.045 160);
+  --sidebar-foreground: oklch(0.93 0.02 85);
+  --sidebar-primary: oklch(0.78 0.14 78);
+  --sidebar-primary-foreground: oklch(0.22 0.04 160);
+  --sidebar-accent: oklch(0.33 0.05 160);
+  --sidebar-accent-foreground: oklch(0.98 0.01 85);
+  --sidebar-border: oklch(0.35 0.04 160);
+  --sidebar-ring: oklch(0.78 0.14 78);
+  --shadow-paper: 0 1px 2px oklch(0.3 0.03 160 / 0.08), 0 12px 32px -12px oklch(0.3 0.03 160 / 0.25);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@utility grade-cell {
+  width: 100%;
+  min-width: 3.5rem;
+  height: 2rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  background: transparent;
+  border-radius: calc(var(--radius) - 4px);
+  outline: none;
+  &:focus {
+    background: var(--color-accent);
+    box-shadow: inset 0 0 0 2px var(--color-ring);
+  }
+}
+
+/* Bulletin (feuille A4) */
+.bulletin-page {
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 12mm 12mm;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.35;
+  box-sizing: border-box;
+}
+
+.bulletin-page table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.bulletin-page th,
+.bulletin-page td {
+  border: 1px solid var(--rule);
+  padding: 4.5px 5px;
+}
+
+.bulletin-page th {
+  background: var(--bulletin-head);
+  font-weight: 600;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.print-area {
+  display: none;
+}
+
+.sheet-preview {
+  zoom: 0.8;
+}
+
+@media (min-width: 1600px) {
+  .sheet-preview {
+    zoom: 1;
+  }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: var(--paper) !important;
+  }
+  .app-shell,
+  [data-sonner-toaster] {
+    display: none !important;
+  }
+  .print-area {
+    display: block;
+  }
+  .print-area .bulletin-page {
+    break-after: page;
+    page-break-after: always;
+    box-shadow: none;
+  }
+  .print-area .bulletin-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
